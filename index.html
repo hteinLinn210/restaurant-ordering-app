@@ -22,7 +22,7 @@
          <section id="modal" class="modal">
             <div class="modal-inner">
                <h3>Enter card details</h3>
-               <form action="" method="get" class="form-example">
+               <form action="" method="get" id="payment-form" class="form-example">
                   <input
                      type="text"
                      name="name"
@@ -35,8 +35,8 @@
                      name="card"
                      id="card"
                      placeholder="Enter card number"
-                     min="16"
-                     max="16"
+                     minlength="16"
+                     maxlength="16"
                      required
                   />
                   <input
@@ -44,8 +44,8 @@
                      name="CVV"
                      id="CVV"
                      placeholder="Enter CVV"
-                     min="3"
-                     max="3"
+                     minlength="3"
+                     maxlength="3"
                      required
                   />
                   <input id="pay-btn" class="pay-btn" type="submit" value="Pay" />

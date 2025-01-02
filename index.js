@@ -1,6 +1,6 @@
 import { menuArray } from "/data.js";
 
-const payBtn = document.getElementById("pay-btn");
+const paymentForm = document.getElementById("payment-form");
 
 let selectedItems = [];
 
@@ -15,7 +15,7 @@ document.addEventListener("click", (e) => {
          (item) => item.name === e.target.dataset.remove
       );
       if (removeIndex !== -1) {
-         selectedItems.splice(removeIndex, 1); // Remove the specific item
+         selectedItems.splice(removeIndex, 1);
       }
    } else if (e.target.dataset.complete) {
       document.getElementById("modal").style.display = "block";
@@ -24,23 +24,15 @@ document.addEventListener("click", (e) => {
    render();
 });
 
-payBtn.addEventListener("click", (e) => {
+paymentForm.addEventListener("submit", (e) => {
    e.preventDefault();
-
    const customer = document.getElementById("name").value;
-   const inputs = document.querySelectorAll("#modal input");
-   const allFilled = Array.from(inputs).every((input) => input.value.trim() !== "");
-
-   if (allFilled) {
-      document.getElementById("modal").style.display = "none";
-      document.getElementById("order-complete").innerHTML = `
+   document.getElementById("modal").style.display = "none";
+   document.getElementById("order-complete").innerHTML = `
       <p class="order-complete-text">Thanks, ${customer}! Your order is on its way!</p>`;
-      document.getElementById("order-complete").style.display = "block";
-      selectedItems = [];
-      render();
-   } else {
-      alert("Please fill in all required fields before paying.");
-   }
+   document.getElementById("order-complete").style.display = "block";
+   selectedItems = [];
+   render();
 });
 
 function getOrderHtml() {
