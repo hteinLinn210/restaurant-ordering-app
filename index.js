@@ -27,11 +27,14 @@ document.addEventListener("click", (e) => {
 payBtn.addEventListener("click", (e) => {
    e.preventDefault();
 
+   const customer = document.getElementById("name").value;
    const inputs = document.querySelectorAll("#modal input");
    const allFilled = Array.from(inputs).every((input) => input.value.trim() !== "");
 
    if (allFilled) {
       document.getElementById("modal").style.display = "none";
+      document.getElementById("order-complete").innerHTML = `
+      <p class="order-complete-text">Thanks, ${customer}! Your order is on its way!</p>`;
       document.getElementById("order-complete").style.display = "block";
       selectedItems = [];
       render();
