@@ -1,0 +1,62 @@
+<html>
+   <head>
+      <link rel="stylesheet" href="index.css" />
+      <!-- Font Family -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+         rel="stylesheet"
+      />
+   </head>
+   <body>
+      <main>
+         <header>
+            <h1>Jimmy’s Diner</h1>
+            <p>The best burgers and pizzas in town.</p>
+         </header>
+
+         <section id="menu"></section>
+         <section id="order" class="order"></section>
+
+         <section id="modal" class="modal">
+            <div class="modal-inner">
+               <h3>Enter card details</h3>
+               <form action="" method="get" class="form-example">
+                  <input
+                     type="text"
+                     name="name"
+                     id="name"
+                     placeholder="Enter your name"
+                     required
+                  />
+                  <input
+                     type="number"
+                     name="card"
+                     id="card"
+                     placeholder="Enter card number"
+                     min="16"
+                     max="16"
+                     required
+                  />
+                  <input
+                     type="number"
+                     name="CVV"
+                     id="CVV"
+                     placeholder="Enter CVV"
+                     min="3"
+                     max="3"
+                     required
+                  />
+                  <input id="pay-btn" class="pay-btn" type="submit" value="Pay" />
+               </form>
+            </div>
+         </section>
+
+         <div class="order-complete" id="order-complete">
+            <p class="order-complete-text">Thanks James! Your order is on its way!</p>
+         </div>
+      </main>
+      <script src="index.js" type="module"></script>
+   </body>
+</html>
